@@ -79,7 +79,7 @@ if (typeof kblang === 'undefined') {
   this.VKI_size = 4;  // Default keyboard size (1-5)
   this.VKI_sizeAdj = true;  // Allow user to adjust keyboard size
   this.VKI_clearPasswords = false;  // Clear password fields on focus
-  this.VKI_imageURI = "https://raw.githubusercontent.com/pod-o-mart/keyboardBookmarlets/master/keyboard.png";  // If empty string, use imageless mode
+  this.VKI_imageURI = "https://languagebookmarklet.de/keyboard/keyboard.png";  // If empty string, use imageless mode
   this.VKI_clickless = 0;  // 0 = disabled, > 0 = delay in ms
   this.VKI_keyCenter = 3;
 
@@ -1417,7 +1417,7 @@ if (typeof kblang === 'undefined') {
 
                 switch (lkey[1]) {
                   case "Caps": case "Shift":
-                  case "Alt": case "AltGr": case "\u0462":
+                  case "Alt": case "AltGr": case "AltLk":
                     VKI_addListener(td, 'click', (function(type) { return function() { self.VKI_modify(type); return false; }})(lkey[1]), false);
                     break;
                   case "Tab":
@@ -1491,7 +1491,7 @@ if (typeof kblang === 'undefined') {
     switch (type) {
       case "Alt":
       case "AltGr": this.VKI_altgr = !this.VKI_altgr; break;
-      case "\u0462": this.VKI_altgr = 0; this.VKI_altgrlock = !this.VKI_altgrlock; break;
+      case "AltLk": this.VKI_altgr = 0; this.VKI_altgrlock = !this.VKI_altgrlock; break;
       case "Caps": this.VKI_shift = 0; this.VKI_shiftlock = !this.VKI_shiftlock; break;
       case "Shift": this.VKI_shift = !this.VKI_shift; break;
     } var vchar = 0;
@@ -1509,7 +1509,7 @@ if (typeof kblang === 'undefined') {
           case "AltGr":
             if (this.VKI_altgr) className.push("pressed");
             break;
-          case "\u0462":
+          case "AltLk":
             if (this.VKI_altgrlock) className.push("pressed");
             break;
           case "Shift":
