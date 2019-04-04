@@ -1470,7 +1470,7 @@ this.VKI_deadkey['\u{1350}'] = {'\u{12A3}': "\u{1353}", '\u{12A1}': "\u{1351}", 
 
                 switch (lkey[1]) {
                   case "Caps": case "Shift":
-                  case "Alt": case "AltGr": case "\u0462":
+                  case "Alt": case "AltGr": case "AltLk":
                     VKI_addListener(td, 'click', (function(type) { return function() { self.VKI_modify(type); return false; }})(lkey[1]), false);
                     break;
                   case "Tab":
@@ -1544,7 +1544,7 @@ this.VKI_deadkey['\u{1350}'] = {'\u{12A3}': "\u{1353}", '\u{12A1}': "\u{1351}", 
     switch (type) {
       case "Alt":
       case "AltGr": this.VKI_altgr = !this.VKI_altgr; break;
-      case "\u0462": this.VKI_altgr = 0; this.VKI_altgrlock = !this.VKI_altgrlock; break;
+      case "AltLk": this.VKI_altgr = 0; this.VKI_altgrlock = !this.VKI_altgrlock; break;
       case "Caps": this.VKI_shift = 0; this.VKI_shiftlock = !this.VKI_shiftlock; break;
       case "Shift": this.VKI_shift = !this.VKI_shift; break;
     } var vchar = 0;
@@ -1562,7 +1562,7 @@ this.VKI_deadkey['\u{1350}'] = {'\u{12A3}': "\u{1353}", '\u{12A1}': "\u{1351}", 
           case "AltGr":
             if (this.VKI_altgr) className.push("pressed");
             break;
-          case "\u0462":
+          case "AltLk":
             if (this.VKI_altgrlock) className.push("pressed");
             break;
           case "Shift":
