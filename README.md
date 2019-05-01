@@ -1,7 +1,6 @@
 # keyboardBookmarklets
 Virtual keyboard bookmarklets for the use on almost any web site
  - Universal keyboard
- - Universal keyboard with dead keys "on" by default, additional Ethiopic keyboards (Amharic, Tigrinya)
  - Keyboard for Slavic studies
    - Added Old Church Slavonic and Glagolitic keyboards (also incorporated to the universal keyboards)
    - Russian is extended with Old Church Slavonic characters, see Ѣ / ALT
