@@ -20,14 +20,14 @@
  *   See full changelog at:
  *     http://www.greywyvern.com/code/javascript/keyboard.changelog.txt
  * 
- ** Changes by Martin Podolak on top of version 1.49:
+ ** Changes by Martin Podolak on top of version 1.43:
  ** 2019-05-01 merged keyboard_ru-ocs.js and keyboard_am_ti.js into this file (keyboard.js)
  ** 2019-04-30 Turkmen, Crimean Tatar added, Turkish Q, Ukrainian and Russian updated, Russian extended with old characters and an own meta key for that: "yat"
  ** 2019-04-29 Old Church Slavonic (+dead keys) and Glagolitic added, Bulgarian and Serbian updated
  ** 2019-03-07 Amharic and Tigrinya keyboard added (+dead keys)
  *
  * Keyboard Credits
- **  - Amharic, Tigrinya, Turkmen, Crimean Tatar, Old Church Slavonic and Glagolitic keyboard layouts by Martin Podolak (podolak.net)
+ **  - Amharic, Tigrinya, Turkmen, Crimean Tatar, Old Church Slavonic, Glagolitic, Russian extended keyboard layouts by Martin Podolak (podolak.net)
  *   - Khmer keyboard layout by Sovann Heng (km-kh.com)
  *   - Dari keyboard layout by Saif Fazel
  *   - Kurdish keyboard layout by Ara Qadir

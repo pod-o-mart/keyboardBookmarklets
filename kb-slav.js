@@ -19,8 +19,12 @@
  *
  *   See full changelog at:
  *     http://www.greywyvern.com/code/javascript/keyboard.changelog.txt
- *
+ * 
+ ** Changes by Martin Podolak on top of version 1.43:
+ ** 2019-04-29 Old Church Slavonic (+dead keys) and Glagolitic added, Russian extended, Bulgarian and Serbian updated
+ * 
  * Keyboard Credits
+**  - Old Church Slavonic, Glagolitic and Russian extended keyboard layouts by Martin Podolak (podolak.net)
  *   - Khmer keyboard layout by Sovann Heng (km-kh.com)
  *   - Dari keyboard layout by Saif Fazel
  *   - Kurdish keyboard layout by Ara Qadir
