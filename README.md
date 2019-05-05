@@ -3,7 +3,8 @@ Virtual keyboard bookmarklets for the use on almost any web site
  - Universal keyboard
  - Keyboard for Slavic studies
    - Added Old Church Slavonic and Glagolitic keyboards (also incorporated to the universal keyboards)
-   - Russian is extended with Old Church Slavonic characters, see Ѣ / ALT
+   - English keyboard with common diacritic characters for transliteration (ALA-LC, ISO, BGN/PCGN, British Standard)
+
 
 [DEMO](https://languagebookmarklet.de/keyboard/test.html)
 
