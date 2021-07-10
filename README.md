@@ -4,14 +4,12 @@ Virtual keyboard bookmarklets for the use on almost any web site
  - Keyboard for Slavic studies
    - Added Old Church Slavonic and Glagolitic keyboards (also incorporated to the universal keyboards)
    - English keyboard with common diacritic characters for transliteration (ALA-LC, ISO, BGN/PCGN, British Standard)
+ - Keyboard for East European studies
+   - All keyboards from Slavic studies plus keyboards for languages used in Eastern Europe and CIS
 
 
-[DEMO](https://languagebookmarklet.de/keyboard/test.html)
+[Get the ready-to-use bookmarklets here](https://pod-o-mart.github.io/keyboardBookmarklets/)
 
-In order to use the  bookmarklets on your own server, website or computer, you need to
- - Download one of the JS files, the CSS stylesheet and the PNG image to the preferred location
- - Use the link provided in the HTML file or go to the demo page where you add one of the links as a bookmark
- - Adjust the file addresses in the bookmark to your needs
 
 Credits
 -------
