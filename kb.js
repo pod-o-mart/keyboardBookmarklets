@@ -86,7 +86,7 @@ if (typeof kblang === 'undefined') {
   this.VKI_size = 4;  // Default keyboard size (1-5)
   this.VKI_sizeAdj = true;  // Allow user to adjust keyboard size
   this.VKI_clearPasswords = false;  // Clear password fields on focus
-  this.VKI_imageURI = "https://languagebookmarklet.de/keyboard/keyboard.png";  // If empty string, use imageless mode
+  this.VKI_imageURI = "data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAANAgMAAADH6eY5AAAADFBMVEUAAADAwMD///+AgID8PoY4AAAAUElEQVR4Xk3KsQ2AIBCF4TcEbHCVe1hoZ3IsZhyBRqdgCNzAwrgEHncGfHnVnw/FhmudSI68jE6OBNujecOpmVu/q5/j5/nnh2OnKN6H0P0LmzYfoht62vIAAAAASUVORK5CYII=";  // If empty string, use imageless mode
   this.VKI_clickless = 0;  // 0 = disabled, > 0 = delay in ms
   this.VKI_keyCenter = 3;
 
