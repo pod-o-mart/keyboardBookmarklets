@@ -1,5 +1,5 @@
 # keyboardBookmarklets
-Virtual keyboard bookmarklets for the use on almost any web site
+Virtual keyboard bookmarklets for the use on almost any web site.
  - Universal keyboard
  - Keyboard for Slavic studies
    - Added Old Church Slavonic and Glagolitic keyboards (also incorporated to the universal keyboards)
@@ -8,8 +8,10 @@ Virtual keyboard bookmarklets for the use on almost any web site
    - All keyboards from Slavic studies plus keyboards for languages used in Eastern Europe and CIS
 
 
-[Get the ready-to-use bookmarklets here](https://pod-o-mart.github.io/keyboardBookmarklets/)
+**[Get the ready-to-use bookmarklets here](https://pod-o-mart.github.io/keyboardBookmarklets/)**
 
+## Embedding the keyboard in own website
+[GreyWywern's Virtual Keyboard Interface improved and extended](https://github.com/pod-o-mart/vki) including a mobile version.
 
 Credits
 -------
