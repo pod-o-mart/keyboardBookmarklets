@@ -59,7 +59,29 @@
  *   - Turkish keyboard layouts by offcu
  *   - Dutch and US Int'l keyboard layouts by jerone
  *
+ ** Fork from Version 1.43 - October 29, 2010: Bookmarklet by Martin Podolak - https://github.com/pod-o-mart/keyboardBookmarklets
+ * 2019-05-05 - Version 1.3: Adpated code to bookmarklet. Amharic, Tigrinya, Turkmen, Crimean Tatar, Old Church Slavonic, Glagolitic, Russian extended keyboard layouts
+ * 2021-09-28 - Version 1.4: Added language cookie. Tries to remember chosen language when staying on the same domain
  */
+/* Bookmarklet adjustment: Get language if cookie exists */
+function getCookie(vki_bm) {
+  let name = vki_bm + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+var kblang2 = getCookie("vki_bm");
+/* END Bookmarklet adjustment: Get language if cookie exists */
+	
 var VKI_attach, VKI_close;
 (function VKI_buildKeyboardInputs() {
   var self = this;
@@ -71,17 +93,21 @@ var VKI_attach, VKI_close;
   this.VKI_altgr = this.VKI_altgrlock = false;
   this.VKI_dead = false;
   this.VKI_deadBox = true; // Show the dead keys checkbox
-  this.VKI_deadkeysOn = true;  // Turn dead keys on by default
+  this.VKI_deadkeysOn = false;  // Turn dead keys on by default
   this.VKI_numberPad = false;  // Allow user to open and close the number pad
   this.VKI_numberPadOn = false;  // Show number pad by default
-//  this.VKI_kts = this.VKI_kt = "US International";  // Default keyboard layout
-if (typeof kblang === 'undefined') {
-  this.VKI_kts = this.VKI_kt = "English";
-}  if (typeof kblang !== 'undefined') {
-  this.VKI_kts = this.VKI_kt = kblang;
-} else {
-  this.VKI_kts = this.VKI_kt = "English";
-}  
+//  this.VKI_kts = this.VKI_kt = "English";  // Default keyboard layout
+/* Bookmarklet adjustment: Set language from cookie - if not exists, from bookmarklet - else default  */
+  if (kblang2 && (kblang2 != '') && (kblang2 != undefined)) {
+    //alert("vki_BM" + kblang2);
+    this.VKI_kts = this.VKI_kt = kblang = kblang2;
+  }
+  else if (kblang && (kblang != '') && (kblang != undefined)) {
+    this.VKI_kts = this.VKI_kt = kblang ;
+  }
+  else {
+    this.VKI_kts = this.VKI_kt = kblang = "English";
+  }  // END Bookmarklet adjustment
   this.VKI_langAdapt = false;  // Use lang attribute of input to select keyboard
   this.VKI_size = 4;  // Default keyboard size (1-5)
   this.VKI_sizeAdj = true;  // Allow user to adjust keyboard size
@@ -1019,7 +1045,7 @@ this.VKI_layout['T\u00FCrkmen\u00E7e'] = {
     ], 'lang': ["zh"] };
 
   this.VKI_layout['አማርኛ'] = {
-    'name': "Amharic", 'keys': [
+    'name': "Amharic (IMPORTANT: turn dead keys ON)", 'keys': [
       [["\u{1369}", "\u{A1}"], ["1", "!"], ["2", "@"], ["3", ","], ["4", "$"], ["5", "%"], ["6", "."], ["7", "/"], ["8", "?"], ["9", "("], ["0", ")"], ["-", "\u{135F}"], ["=", "+"], ["Bksp", "Bksp"]],
       [["Tab", "Tab"], ["\u{1200}", "\u{1210}"], ["\u{1260}", "\u{1268}"], ["\u{1290}", "\u{1298}"], ["\u{1218}", "\u{1238}"], ["\u{12C8}", "\u{12D0}"], ["\u{1320}", "\u{1328}"], ["\u{1270}", "\u{1340}"], ["\u{1208}", "\u{1338}"], ["\u{1228}", "\u{1280}"], ["\u{12E8}", "\u{1288}"], ["[", "{"], ["]", "}"], ["\\", "|"]],
       [["Caps", "Caps"], ["\u{12A3}", "\u{1364}"], ["\u{12A1}", "\u{1366}"], ["\u{12A0}", "\u{AB}"], ["\u{12A5}", "\u{1361}"], ["\u{12A4}", "\u{1368}"], ["\u{12A7}", "\u{1367}"], ["\u{12A5}", "\u{1363}"], ["\u{12A0}", "\u{BB}"], ["\u{12A6}", "\u{1365}"], ["\u{12A2}", "\u{1362}"], ["'", '"'], ["Enter", "Enter"]],
@@ -1028,7 +1054,7 @@ this.VKI_layout['T\u00FCrkmen\u00E7e'] = {
     ], 'lang': ["amh"] };
 
   this.VKI_layout['ትግርኛ'] = {
-    'name': "Tigrinya", 'keys': this.VKI_layout['አማርኛ'].keys.slice(0), 'lang': ["ti"]
+    'name': "Tigrinya (IMPORTANT: turn dead keys ON)", 'keys': this.VKI_layout['አማርኛ'].keys.slice(0), 'lang': ["ti"]
   };
 
   /* ***** Define Dead Keys ************************************** */
@@ -1314,6 +1340,7 @@ this.VKI_deadkey['\u{1350}'] = {'\u{12A3}': "\u{1353}", '\u{12A1}': "\u{1351}", 
                     self.VKI_kts = self.VKI_kt = kbSelect.firstChild.nodeValue = this.firstChild.nodeValue;
                     self.VKI_buildKeys();
                     self.VKI_position(true);
+                    document.cookie = "vki_bm=" + VKI_kts + "; path=/"; // Bookmarklet adjustment: Set cookie with changed language
                   }, false);
                   VKI_mouseEvents(li);
                     li.appendChild(document.createTextNode(ktype));
