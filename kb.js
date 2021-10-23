@@ -93,7 +93,7 @@ var VKI_attach, VKI_close;
   this.VKI_altgr = this.VKI_altgrlock = false;
   this.VKI_dead = false;
   this.VKI_deadBox = true; // Show the dead keys checkbox
-  this.VKI_deadkeysOn = false;  // Turn dead keys on by default
+  this.VKI_deadkeysOn = true;  // Turn dead keys on by default
   this.VKI_numberPad = false;  // Allow user to open and close the number pad
   this.VKI_numberPadOn = false;  // Show number pad by default
 //  this.VKI_kts = this.VKI_kt = "English";  // Default keyboard layout
